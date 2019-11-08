@@ -1,0 +1,17 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Add New Item</title>
+<style>
+body { text-align:center; font-family:sans-serif; }
+</style>
+</head>
+<body>
+<form th:object="${newItem}" th:action="@{/inputItem}" method='POST'>
+	Item Name: <input name="name" size="30"><br />
+	Location: <input name="location" size="10"><br />
+	<input name="submit" type="submit" value="Add Item" />         
+</form>
+<a href="viewGarage">View Items In Garage</a>
+</body>
+</html>

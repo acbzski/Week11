@@ -1,0 +1,24 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Garage Items</title>
+<style>
+body { text-align:center; font-family:sans-serif; }
+</style>
+</head>
+<body>
+<form>
+<table>
+<tr th:each="currentItem : ${items}" >
+	<td th:text="${currentItem.id}" />
+    <td th:text="${currentItem.name}" />
+    <td th:text="${currentItem.location}" />
+	<td><a th:href="@{/edit/{id}(id=${currentItem.id})}">Edit</a></td>
+    <td><a th:href="@{/donate/{id}(id=${currentItem.id})}">Donate</a></td>
+</tr>
+</table>
+</form>
+<a href="../inputItem">Add New Item</a><br/>
+<a href="/index.html">Return To Home Page</a>
+</body>
+</html>
